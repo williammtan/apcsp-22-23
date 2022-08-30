@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Biography</title>
+
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0px 15px;
+        }
+
+        td {
+          padding: 2px 15px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        image {
+            border-image-width: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>William Tan</h1>
+    <i><h3>Biography</h3></i>
+
+    <figure>
+        <img src="https://cdn3.vectorstock.com/i/thumb-large/63/42/avatar-photo-placeholder-icon-design-vector-30916342.jpg" alt="my picture">
+        <figcaption>My picture</figcaption>
+    </figure>
+
+    <h5><a href="#footer">To the bottom!</a></h5>
+
+    <h2 id="info">Info</h2>
+    <table>
+        <tr>
+            <td><strong>Born</strong></td>
+            <td>27 April 2007, <a href="https://en.wikipedia.org/wiki/Singapore">Singapore</a></td>
+        </tr>
+        <tr>
+            <td><strong>Death</strong></td>
+            <td>Not yet :)</td>
+        </tr>
+        <tr>
+            <td><strong>Education</strong></td>
+            <td><a href="https://id.wikipedia.org/wiki/Jakarta_Intercultural_School">Jakarta Intercultural School</a></td>
+        </tr>
+        <tr>
+            <td><strong>Height</strong></td>
+            <td>175 cm (5 ft 9 in)</td>
+        </tr>
+    </table>
+
+    <h2 id="learnt">What I just learnt</h2>
+    <section>
+        <ol type="I">
+            <li>
+                html boilerplate
+            </li>
+            <li>
+                html lists
+                <ol type="i">
+                    <li>
+                        ordered list (&ltol&gt)
+                    </li>
+                    <li>
+                        unordered list (&ltul&gt)
+                    </li>
+                </ol>
+            </li>
+            <li>
+                languages
+                <ol type="i">
+                    <li>html</li>
+                    <li>css</li>
+                    <li>javascript</li>
+                </ol>
+            </li>
+        </ol>
+
+        <br>
+
+        <table>
+            <tr>
+                <th>tag</th>
+                <th>attributes</th>
+            </tr>
+            <tr>
+                <td>&ltol&gt / &ltul&gt</td>
+                <td>
+                    <ol>
+                        <li>type</li>
+                        <li>style</li>
+                        <li>reversed</li>
+                        <li>start</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>&ltimg&gt</td>
+                <td>
+                    <ol>
+                        <li>src</li>
+                        <li>alt</li>
+                        <li>style</li>
+                        <li>width</li>
+                        <li>height</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>&lta&gt</td>
+                <td>
+                    <ol>
+                        <li>href</li>
+                        <li>style</li>
+                        <li>rel</li>
+                        <li>type</li>
+                        <li>ping</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>&ltvideo&gt</td>
+                <td>
+                    <ol>
+                        <li>autoplay</li>
+                        <li>control</li>
+                        <li>height</li>
+                        <li>width</li>
+                        <li>loop</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>&ltaudio&gt</td>
+                <td>
+                    <ol>
+                        <li>autoplay</li>
+                        <li>style</li>
+                        <li>control</li>
+                        <li>muted</li>
+                        <li>src</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+
+        <h4>My table attempt</h4>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th colspan="2">Phone Numbers</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Ole Johanessen</td>
+                <td>Cell</td>
+                <td>555-1212</td>
+            </tr>
+            <tr>
+                <!-- <td rowspan="2">Ole Johanessen</td> -->
+                <td>Office</td>
+                <td>387-1234</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Per Mertesacker</td>
+                <td>Cell</td>
+                <td>123-5543</td>
+            </tr>
+            <tr>
+                <!-- <td rowspan="2">Ole Johanessen</td> -->
+                <td>Office</td>
+                <td>382-9876</td>
+            </tr>
+        </table>
+    </section>
+
+    <br>
+    
+    <section id="fav">
+        <h2>My favourite websites</h2>
+        <ul>
+            <li>
+                <a href="https://google.com/">google</a>
+            </li>
+            <li>
+                <a href="https://stackoverflow.com/">stackoverflow</a>
+            </li>
+            <li>
+                <a href="https://youtube.com/">youtube</a>
+            </li>
+            <li>
+                <a href="https://github.com/">github</a>
+            </li>
+        </ul>
+    </section>
+
+    <br>
+
+    <section>
+        <h2>My test image</h2>
+        <img src="https://images6.alphacoders.com/105/1054259.jpg" width=200 height=200>
+    </section>
+
+    <br>
+
+    <section>
+        <h2>Rx7 gallery</h2>
+        <img title="rx7 image 1" src="https://images6.alphacoders.com/105/1054259.jpg" width=200>
+        <br>
+        <br>
+        <img title="rx7 image 2" src="https://images8.alphacoders.com/466/466893.jpg" width=200>
+        <br>
+        <br>
+        <img title="rx7 image 3" src="https://wallpaperaccess.com/full/412023.jpg" width=200>
+        <br>
+        <br>
+        <img title="rx7 image 4" src="https://i.pinimg.com/originals/e5/7e/ff/e57eff80dd112809f729567b46dde08f.jpg" width=200>
+        <br>
+        <br>
+        <img title="rx7 image 5" src="https://cdn.wallpapersafari.com/88/65/pBV8Jh.jpg" width=200>
+        <br>
+        <br>
+    </section>
+
+    <br>
+    <section>
+        <h2>My favourite search engine</h2>
+        <strong><i><a href="https://duckduckgo.com/">duckduckgo</a></i></strong>
+    </section>
+
+    <br>
+
+    <footer id="footer">
+        <h6><a href="https://www.linkedin.com/in/william-h-tan/">My linkedin</a>, <a href="https:/github.com/williammtan/">My github</a></h6>
+        <h5><a href="#">To the top!</a></h5>
+        <h5><a href="#info">To the info page!</a></h5>
+        <h5><a href="#learnt">To the what i learnt page!</a></h5>
+        <h5><a href="#learnt">To my favourite websites page!</a></h5>
+    </footer>
+</body>
+</html>

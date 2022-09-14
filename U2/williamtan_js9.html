@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="printVars()">Print vars</button>
+    <button onclick="alertVars()">Alert vars</button>
+    <button onclick="createTable()">Create table from vars</button>
+
+    <br>
+
+    <table id="mytable" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Height</th>
+            <th>Student</th>
+        </tr>
+    </table>
+    <script>
+        let name = "william"; // string
+        let age = 15; // integer
+        let height = 1.75; // double (meters)
+        let student = true; // boolean
+
+        function printVars() {
+            console.log("Name is " + name);
+            console.log("Age is " + age);
+            console.log(`Height is ${height}m`);
+            console.log((student) ? "Is a student" : "Not a student");
+        }
+
+        function alertVars() {
+            alert(`Info: name=${name}, age=${age}, height=${height}, student=${student}`)
+        }
+
+        function createTable() {
+            let table = document.getElementById("mytable");
+            table.innerHTML += `<tr> <td>${name}</td> <td>${age}</td> <td>${height}</td> <td>${student}</td> </tr>`
+        }
+
+
+    </script>
+</body>
+</html>
+
+<!-- Add an H1 title and a javascript.  
+On your js:
+Create 4 variables for storing the following information:
+Name, Age, Height, Student (true or false).
+
+Create three different buttons that will:
+- Print the value of the 5 variables in console
+- Create an alert displaying all the info when the page loads.
+- Add a table row with the information included
+ -->

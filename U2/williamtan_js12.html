@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Score Board</h1>
+    <button onclick="displayValues()">Display Values</button>
+    <button onclick="addPoint()">Add Point</button>
+    <div>
+        <p id="fn">Full Name: </p>
+        <p id="age">Age in days </p>
+        <p id="hours">Hours played: </p>
+        <p id="minutes">Minutes played: </p>
+        <p id="points">Points: </p>
+        <p id="hs">High Score?</p>
+        <p id="position">Expected position achieved? </p>
+    </div>
+    <script>
+        /* 
+            Copied from: https://drive.google.com/file/d/1SnOY28N-F66eOFXXPw-BsKjlreHCcZMO/view 
+        */
+
+        let firstName = "Mery";
+        let lastName = "Tellez";
+        let age = "17";
+        let points = 10;
+        let minutesPlayed = 3004;
+        let highScore = false;
+        const expectedPosition = 2;
+        let varPosition = "2";
+
+        function display(id, value, placeholder) {
+            let h = document.getElementById(id);
+            h.innerHTML = placeholder + value;
+        }
+
+        function displayValues() {
+            display("fn", firstName+" "+lastName, "Full Name: ");
+            display("age", parseInt(age)*365, "Age in days ");
+            display("hours", Math.floor(minutesPlayed/60), "Hours played: ");
+            display("minutes", minutesPlayed, "Minutes played: ");
+            display("points", points, "Points: ");
+            display("hs", points > 8, "High score? ");
+            display("position", expectedPosition==varPosition, "Expected position achieved? ");
+        }
+
+        function addPoint() {
+            points++;
+            display("points", points, "Points: ");
+            display("hs", points > 8, "High score? ");
+        }
+
+
+        /* Full name: displays firstName and LastName
+            Age in days: converts age to days
+            Hours played: calculates hours in minutesPlayed (research how to make it an integer value)
+            Minutes played: calculates the remaining minutes in minutesPlayed after hours played.
+            Points: displays points. Increments by one when Add Point button is pressed.
+            High Score: displays true if points is greater than 8. False otherwise.
+            Expected position achieved: displays true if varPosition is equal to expectedPosition. false otherwise
+            */
+            
+    </script>
+</body>
+</html>

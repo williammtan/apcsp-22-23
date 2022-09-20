@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function randomOne() {
+            let out = document.getElementById("output");
+            let outStr = ""
+            for(let i=0;i<10;i++) {
+                outStr += Math.random() + "<br>";
+            }
+            out.innerHTML = outStr;
+        }
+
+        function randomRange() {
+            let from = parseInt(document.getElementById("from").value);
+            let to = parseInt(document.getElementById("to").value);
+
+            let out = document.getElementById("output");
+            let outStr = ""
+            for(let i=0;i<10;i++) {
+                outStr += Math.floor(Math.random() * (to-from+1))+from + "<br>";
+            }
+            out.innerHTML = outStr;
+        }
+    </script>
+</head>
+<body>
+    <label>From</label>
+    <input id="from">
+    <label>To</label>
+    <input id="to">
+    <br>
+    <button onclick="randomOne()">Random</button>
+    <button onclick="randomRange()">Random Range</button>
+    <div id="output"></div>
+</body>
+</html>

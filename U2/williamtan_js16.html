@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display() {
+            let text = document.getElementById('text').value;
+            let color = document.getElementById('color').value;
+            let fontsize = document.getElementById('fontsize').value;
+            let italic = document.getElementById('italic').checked;
+
+            let p = document.getElementById("p");
+            p.innerHTML = text;
+            p.style.color = color;
+            p.style.fontSize = fontsize + "px";
+            if (italic) {
+                p.style.fontStyle = "italic";
+            } else {
+                p.style.fontStyle = "none";
+            }
+            console.log((italic) ? "italic" : "none");
+        }
+    </script>
+</head>
+<body>
+    <label>Text: </label><input id="text">
+    <br>
+    <label>Color: </label><input id="color" type="color">
+    <br>
+    <label>Fontsize: </label><input id="fontsize">
+    <br>
+    <label>Italic: </label><input id="italic" type="checkbox">
+    <br>
+    <button onclick="display()">display</button>
+    <p id="p">
+
+    </p>
+</body>
+</html>

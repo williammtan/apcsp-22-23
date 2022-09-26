@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="text">
+    <button onclick="countCharacters()">Count Characters</button>
+    <button onclick="search()">Search</button>
+    <script>
+        function countCharacters() {
+            let text = document.getElementById("text");
+            alert(text.length);
+        }
+        
+        function search() {
+            let text = document.getElementById("text").value;
+            let searchText = prompt("text to search");
+            let idx = text.indexOf(searchText); // returns a positive integer if exists, else -1
+            if (idx != -1) {
+                alert(`'${searchText}' does exist in '${text}' at index ${idx}`);
+            } else {
+                alert(`'${searchText}' does NOT exists in '${text}'`);
+            }
+        }
+    </script>
+</body>
+</html>

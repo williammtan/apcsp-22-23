@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = () => {
+            // find regex matches in text
+
+            let text = prompt("text");
+            let regex = prompt("regex");
+
+            let matches = [...text.matchAll(regex)];
+            console.log(matches);
+
+            if (matches.length == 0) {
+                alert("no matches!")
+            } else {
+                result = "got matches: ";
+                for(let i=0;i<matches.length;i++) {
+                    result += matches[i]
+                    if (i!=matches.length-1) {
+                        result += ', ';
+                    }
+                }
+                alert(result);
+            }
+        }
+    </script>
+</body>
+</html>

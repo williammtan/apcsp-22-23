@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">
+
+    </div>
+
+    <script>
+        window.onload = () => {
+            let name = prompt("name");
+            let lastName = prompt("last name");
+            let email = prompt("email");
+            let phone = prompt("phone");
+            let address = prompt("address");
+
+            let div = document.getElementById("div");
+            div.innerHTML = ""
+            div.innerHTML += `<p>Mr/Mrs. ${name} ${lastName}</p>`;
+            div.innerHTML += `<p>Email: ${email} </p>`;
+            div.innerHTML += `<p>Phone ${phone} </p>`;
+            div.innerHTML += `<p>Address: ${address} </p>`;
+        }
+    </script>
+</body>
+</html>

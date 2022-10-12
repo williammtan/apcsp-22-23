@@ -1,0 +1,52 @@
+<!-- 
+U3_Practice1.html: Pluralize
+
+- Create a page U3_Practice1 that has 2 input boxes: a noun and a number.
+- Add a button for output.  
+- The button should call a function named pluralize that:
+- Outputs (on an H2 or a div) the number and pluralized form, like "5 cats" or "1 dog".
+- Challenge: Make it handle a few collective nouns like "sheep" and "geese".
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Noun: </label>
+    <input id="noun">
+    <br>
+    <label>Number: </label>
+    <input id="number">
+    <br>
+    <button onclick="pluralize()">Submit</button>
+    <h3 id=result></h3>
+</body>
+<script>
+    let collectiveNouns = ['sheep', 'geese']
+
+    function pluralize() {
+        let noun = document.getElementById("noun").value;
+        let num = parseInt(document.getElementById("number").value);
+        let resulth3 = document.getElementById("result");
+
+        let result;
+
+        if (collectiveNouns.includes(noun)) {
+            result = noun;
+        } else if (num > 1) {
+            result = `${noun}s`;
+        } else if (num == 1) {
+            result = noun;
+        }
+
+        result = num + " " + result;
+
+        resulth3.innerHTML = result;
+    }
+</script>
+</html>

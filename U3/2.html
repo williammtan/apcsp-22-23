@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #btn {
+        background-color: red;
+    }
+</style>
+<body>
+    <button id="btn" onmouseover="move()">try to click me</button>
+</body>
+<script>
+    // function move() {
+    //     let button = document.getElementById("btn");
+    //     let x = Math.floor(Math.random() * 301);
+    //     button.style.translate = "translate(" + x + "px, 0px)";
+    // }
+
+    // x = 0;
+
+    // function move() {
+    //     let button = document.getElementById("btn");
+    //     if(x==300) {
+    //         x = 0;
+    //     } else {
+    //         x = 300
+    //     }
+
+    //     button.style.transform = "translate(" + x + "px, 0px)";
+    // }
+
+    function move() {
+        let button = document.getElementById("btn");
+        let x = Math.floor(Math.random() * 100);
+        let y = Math.floor(Math.random() * 100);
+
+        button.style.transform = "translate(" + x + "vh, " + y + "vh)";
+    }
+</script>
+</html>

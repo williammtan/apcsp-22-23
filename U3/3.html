@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>password</label>
+    <input id="password" type="password">
+    <button onclick="submit()">Submit</button>
+    <div id="protected" hidden>Some protected content!</div>
+</body>
+<script>
+    const password = "password123";
+    
+    function submit() {
+        let passwordInput = document.getElementById("password");
+        let protected = document.getElementById("protected");
+        if (passwordInput.value == password) {
+            alert("Welcome!");
+            protected.hidden = false;
+            window.location.href = "https://docs.google.com";
+        } else {
+            alert("Wrong password");
+            window.location.href = "https://screenmessage.com/fgga";
+        }
+    }
+</script>
+</html>

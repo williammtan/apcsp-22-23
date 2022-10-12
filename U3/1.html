@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>num 1:</label>
+    <input id="num1">
+    <br>
+    <label>num 2:</label>
+    <input id="num2">
+
+    <br>
+    <button onclick="eq()">==</button>
+    <button onclick="ne()">!=</button>
+    <button onclick="gt()">></button>
+    <button onclick="lt()"><</button>
+
+    <br>
+    <h3 id="out"></h3>
+</body>
+<script>
+    let h3 = document.getElementById("out");
+    
+    let num1;
+    let num2;
+
+    function parseVals() {
+        num1 = parseInt(document.getElementById("num1").value);
+        num2 = parseInt(document.getElementById("num2").value);
+    }
+
+    function eq() {
+        parseVals();
+        h3.innerHTML = num1 == num2;
+    }
+
+    function ne() {
+        parseVals();
+        h3.innerHTML = num1 != num2;
+    }
+
+    function gt() {
+        parseVals();
+        h3.innerHTML = num1 > num2;
+    }
+
+    function lt() {
+        parseVals();
+        h3.innerHTML = num1 < num2;
+    }
+</script>
+</html>

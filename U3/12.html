@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Name: </label>
+    <input id="name">
+
+    <button onclick="submit()">Create</button>
+
+    <div id="result">
+
+    </div>
+    <script>
+        function submit() {
+            let name = document.getElementById("name").value;
+            let resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "";
+
+            for(let i=0;i<name.length;i++) {
+                let newH3 = document.createElement("h3");
+                newH3.innerHTML = name[i];
+                newH3.style.color = "rgb(" + (Math.floor(Math.random()*256)+1) + ", " + (Math.floor(Math.random()*256)+1) + "," + (Math.floor(Math.random()*256)+1) + ")";
+                resultDiv.appendChild(newH3);
+            }
+        }
+    </script>
+</body>
+</html>

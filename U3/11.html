@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="pinRecursive()">Recursive</button>
+    <button onclick="pinWhile()">While</button>
+    <script>
+        // window.onload = pinRecursive;
+        // window.onload = pinWhile;
+        let pinValue = "0000";
+
+        function pinRecursive() {
+            let userInput = prompt("PIN: ");
+            if (userInput == pinValue) {
+                alert("Welcome!");
+            } else {
+                alert("Incorrect pin");
+                pinRecursive();
+            }
+        }
+
+        function pinWhile() {
+            let userInput = prompt("PIN: ");
+            while(userInput != pinValue) {
+                alert("Incorrect pin");
+                userInput = prompt("PIN: ");
+            }
+
+            alert("Welcome!")
+        }
+    </script>
+</body>
+</html>

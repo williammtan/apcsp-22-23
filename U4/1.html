@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Place your order</h1>
+    <table border="1">
+        <tr>
+            <th>Snack</th>
+            <th>Order</th>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="add('Potato Chips')">Potato Chips</button>
+                <br>
+                <button onclick="add('Pisang Goreng')">Pisang Goreng</button>
+                <br>
+                <button onclick="add('Nachos')">Nachos</button>
+                <br>
+            </td>
+            <td id="output"></td>
+        </tr>
+    </table>
+    <script>
+        let order = {
+            "Potato Chips": 0,
+            "Pisang Goreng": 0,
+            "Nachos": 0
+        };
+        function add(name) {
+            order[name] += 1;
+            // rerender the output
+            let output = "";
+
+            for (let key in order) {
+                if (order[key] != 0) {
+                    output += `<p>${order[key]} order of ${key}</p>`;
+                }
+            }
+
+            document.getElementById("output").innerHTML = output;
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>Tax Calc 2</h1>
+
+    <label>Amount of money:</label>
+    <input id="money" />
+
+    <button onclick="calculateTax('regular')">Regular Client</button>
+    <button onclick="calculateTax('frequent')">Frequent Client tax</button>
+    <button onclick="calculateTax('vip')">VIP Client</button>
+
+    <h3 id="tax"></h3>
+
+    <script>
+      const taxPercent = 0.04;
+
+      function calculateTax(client) {
+
+        let money = parseInt(document.getElementById("money").value);
+        let discounted = money;
+        if (isNaN(money)) {
+          alert("Input a valid number!");
+          return;
+        }
+        if (client == "frequent") {
+            if (money >= 100000) {
+                discounted = money * 0.95;
+            }
+        } else if (client == "vip") {
+            if (money >= 300000) {
+                discounted = money * 0.94;
+            }
+        }
+        let taxAmount = discounted * taxPercent;
+        
+        document.getElementById("tax").innerHTML = "Money: " + money;
+        document.getElementById("tax").innerHTML += "<br> Discounted: " + discounted;
+        document.getElementById("tax").innerHTML += "<br> Tax: " + taxAmount;
+        document.getElementById("tax").innerHTML +="<br> Total amount after tax & discount: " + (taxAmount + discounted);
+    }
+    </script>
+  </body>
+</html>

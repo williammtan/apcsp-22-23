@@ -1,0 +1,51 @@
+<!-- 
+The page will provide a Counter application
+The HTML should include one big number displaying 0 by default and three buttons:
+Reset:  Starts the number at 0 with a neutral color.
+Increase: Adds one to the displayed value and change its color accordingly.
+Decrease: Subtract one to the displayed value and change its color accordingly.
+The number displayed should be green if positive, and red when negative.
+Use parameters and returns as you consider necessary
+
+DONE IN 13min
+
+D: GAV
+N: WILL
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1> Counter Application </h1>
+
+    <h3 id="count"></h3>
+
+    <button onclick="set(i-1)"> Decrease </button>
+    <button onclick="set(i+1)"> Increase </button>
+    <button onclick="set(0)"> Reset </button>
+
+    <script> 
+    i=0;
+    set(0);
+    function set(lol) {
+        i=lol;
+        document.getElementById("count").innerHTML = i;
+        if (i > 0) {
+            document.getElementById("count").style.color = "green";
+        } else if (i < 0) {
+            document.getElementById("count").style.color = "red";
+        } else if (i == 0) {
+            document.getElementById("count").style.color = "yellow";
+        }
+        
+    }
+    </script>
+</body>
+
+ </html>

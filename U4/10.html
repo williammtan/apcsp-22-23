@@ -1,0 +1,39 @@
+<!-- 
+    DONE BY 6MIN 14S
+    D: William
+    N: Gavin
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Tax Calculator</h1>
+    <label>Amount of money:</label>
+    <input id="money">
+    <button onclick="calculateTax()">Calculate tax</button>
+    <h3 id="tax"></h3>
+
+    <script>
+        const taxPercent = 0.04;
+
+        function calculateTax() {
+            let taxValue = parseInt(document.getElementById("money").value);
+            if (isNaN(taxValue)) {
+                alert("Input a valid number!");
+                return;
+            } else {
+                let taxAmount = taxValue * taxPercent;
+                document.getElementById("tax").innerHTML = "Tax: " + taxAmount;
+                document.getElementById("tax").innerHTML += "<br> Total amount after tax: " +  (taxAmount + taxValue);
+            }
+        }
+    </script>
+</body>
+</html>

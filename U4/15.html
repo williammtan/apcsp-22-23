@@ -1,0 +1,60 @@
+<!-- 
+
+    Recreate the Circle exercise (U4_4) creating an object to store the value of the radius, area and circumference of the circle. 
+The page will have inputs and ONE button to calculate properties of a circle. The button should call a function that will in turn call the functions described below and take care of the output.
+Create 5 functions as follows:
+Create a calculate() function that takes care of calling the following functions appropriately in order to: calculate and display the area and circumference of the given circle.
+Create a function to read the values from input and store them in one GLOBAL object.
+Create a return function called calcCircumference:  Pass the radius to the function and calculate the circumference based on the radius, and returns the circumference value
+Create a return function called calcArea:  Pass the radius to the function and calculate the area based on the radius, and returns the area value
+Create a function display: receives a circle object and display the values on an HTML component of your preference.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Radius: <input id="radius">
+    <!-- Area: <input id="area">
+    Circumference: <input id="circumference"> -->
+    <button onclick="calculate()">Calculate</button>
+    <h3 id="out"></h3>
+    <script>
+        let circle = {};
+
+        function calculate() {
+            readInput();
+            circle.circumference = calcCircumference(circle.radius);
+            circle.area = calcArea(circle.radius);
+            display(circle);
+        }
+
+        function calcCircumference(radius) {
+            return 2 * Math.PI * radius;
+        }
+
+        function calcArea(radius) {
+            return (Math.PI**2)*radius;
+        }
+
+        function display(circle) {
+            let out = document.getElementById("out");
+            out.innerHTML = "Circumference: " + round(circle.circumference, 100) + "<br>" + "Area: " + round(circle.area, 100);
+        }
+
+        function round(float, n) {
+            return Math.round(float*n)/n
+        }
+
+        function readInput() {
+            circle.radius = parseFloat(document.getElementById("radius").value);
+        }
+    </script>
+</body>
+</html>

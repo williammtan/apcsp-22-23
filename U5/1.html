@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let names = ["Leo", "Mari", "Peter"];
+
+        alert(names[1]);
+        alert(names);
+
+        names[1] = names[2];
+        alert(names);
+
+        for(let i=0;i<names.length;i++) {
+            let e = document.createElement("h3");
+            e.innerHTML = names[i];
+            document.body.appendChild(e);
+        }
+    </script>
+</body>
+</html>

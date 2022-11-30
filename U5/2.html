@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+    <input id="grade">
+    <button onclick="addGrade();">Add grade</button>
+    <button onclick="calculateAverage();">Calculate average</button>
+    <p id="gradeList">Grades: </p>
+    <p id="result"></p>
+    <script>
+        let grades = [];
+
+        function addGrade() {
+            grades.push(parseFloat(document.getElementById("grade").value));
+            document.getElementById("gradeList").innerHTML = "Grades: " + grades;
+            document.getElementById("grade").value = "";
+        }
+
+        function calculateAverage() {
+            let sum = 0;
+            for(let i=0;i<grades.length;i++) {
+                sum += grades[i];
+            }
+            let avg = sum/grades.length
+            document.getElementById("result").innerHTML = avg;
+        }
+    </script>
+</body>
+</html>

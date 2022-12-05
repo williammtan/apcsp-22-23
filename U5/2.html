@@ -23,10 +23,11 @@
         }
 
         function calculateAverage() {
-            let sum = 0;
-            for(let i=0;i<grades.length;i++) {
-                sum += grades[i];
-            }
+            // let sum = 0;
+            // for(let i=0;i<grades.length;i++) {
+            //     sum += grades[i];
+            // }
+            let sum = grades.reduce((tot, grade) => tot + grade, 0);
             let avg = sum/grades.length
             document.getElementById("result").innerHTML = avg;
         }

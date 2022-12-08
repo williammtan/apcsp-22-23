@@ -1,0 +1,45 @@
+<!-- 
+
+    Write a webpage to display a Photo Gallery
+    The page should contain an array with strings corresponding to different picture sources
+    The page should have two buttons only >  and <
+    When pressed the image should change to the next photo on the array until the last index or first index is reached in which case the buttons should become disabled.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .arrow {
+            /* display: flex;
+            align-items: center;
+            text-align: center; */
+            /* min-height: 100vh; */
+
+            font-size:50px;
+            pointer-events: visible;
+        }
+    </style>
+</head>
+<body>
+    <span onclick="changeImg(1)" class="arrow" style="justify-content: start;"><</span>
+    <span onclick="changeImg(-1)" class="arrow" style="justify-content: end;">></span>
+    
+    <script>
+        let idx = 0;
+        let images = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIBGug2K1iRGMvPasBOzrFWEklefu7SDfccEIUAFGoyw&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9l0wtTHtP926-KNZPPCljxBxyWq4j518D-zbtrwUk&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjA12dg6rAelgp87-Dq2NbEzRcfiscUnRNeFAPdjk&s"];
+
+        window.onload = () => {changeImg(0)};
+
+        function changeImg(by) {
+            idx = Math.max(Math.max(idx, idx+by), 0)
+            document.body.style.backgroundImage = images[idx];
+        }
+    </script>
+</body>
+</html>

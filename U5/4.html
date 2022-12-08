@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Coin flips</h1>
+    <input id="num">
+    <button onclick="simulate()">Simulate</button>
+    <p id="results"></p>
+    <p id="summary"></p>
+    <p id="streaks"></p>
+
+    <script>
+
+        function simulate() {
+            let results = document.getElementById("results")
+            let num = document.getElementById("num").value;
+            let flips = [];
+
+            results.innerHTML = "";
+            for(i=0;i<num;i++) {
+                let roll;
+                if(Math.random() > 0.5) {
+                    roll = "heads";
+                } else {
+                    roll = "tails";
+                }
+                flips.push(roll);
+                results.innerHTML += `${i+1}: ${roll} <br>`
+            }
+            summarize(flips);
+            document.getElementById("streaks").innerHTML = "";
+            countStreak(flips, "heads");
+            countStreak(flips, "tails");
+        }
+
+        function summarize(flips) {
+            let heads = 0;
+            let tails = 0;
+            flips.forEach(roll => {
+                console.log(roll)
+                if(roll == "heads") {heads++}
+                else {tails++};
+            });
+            document.getElementById("summary").innerHTML = "Number of heads: " + heads + "<br> Number of tails: " + tails;
+        }
+
+        function countStreak(flips, rollType) {
+            let highStreak = 0;
+            let curStreak = 0;
+            flips.forEach(roll => {
+                if(roll == rollType) {
+                    curStreak++;
+                } else {
+                    highStreak = Math.max(highStreak, curStreak);
+                    curStreak = 0;
+                }
+            })
+            highStreak = Math.max(highStreak, curStreak);
+            document.getElementById("streaks").innerHTML += `Highest ${rollType} streak: ${highStreak} <br>`;
+        }
+    </script>
+</body>
+</html>

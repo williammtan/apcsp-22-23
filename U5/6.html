@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>What we should order for dinner:</h1>
+    <div id="inputs"></div>
+    <!-- <button onclick="add(0)">Ice cream</button> <span id="count-0">0</span>
+    <br>
+    <button onclick="add(1)">Pizza</button> <span id="count-1">0</span>
+    <br>
+    <button onclick="add(2)">Soup</button> <span id="count-2">0</span>
+    <br> -->
+    <h3 id="out"></h3>
+    <script>
+        let names = ["Ice cream", "Pizza", "Soup"];
+        let counts = [0,0,0];
+
+        window.onload = initilizeHtml;
+
+        function initilizeHtml() {
+            // dynamically create the buttons based on the "names" array
+
+            let inputsDiv = document.getElementById('inputs');
+            for(let i=0;i<names.length;i++) {
+                // define a container to encapsulate the button and the span
+                let container = document.createElement("div");
+
+                // create the button
+                let button = document.createElement("button");
+                button.innerHTML = names[i];
+                button.id = "button-" + i;
+
+                // create the span
+                let span = document.createElement("span");
+                span.id = "count-" + i;
+                span.innerHTML = "0";
+
+                // append the button and span to the container
+                container.appendChild(button);
+                container.innerHTML += "&nbsp";
+                container.appendChild(span);
+                inputsDiv.appendChild(container);
+
+                // once we have added the buttonn the the DOM, we can then add the onclick event listener
+                document.getElementById('button-'+i).onclick = () => {add(i)};
+            }
+        }
+
+        function add(idx) {
+            // a function, given the idx of the element clicked, adds to the counts array and calls update()
+
+            counts[idx] += 1;
+            update()
+        }
+
+        function update() {
+            // update the count values of each button, and displays the most selected element
+
+            let max = 0;
+            let maxIdx = 0;
+            for(let i=0;i<names.length;i++) {
+                if(counts[i] > max) {
+                    maxIdx = i;
+                    max = counts[i];
+                }
+                document.getElementById("count-"+i).innerHTML = counts[i];
+            }
+
+            document.getElementById("out").innerHTML = "We are eating " + names[maxIdx];
+        }
+    </script>
+</body>
+</html>

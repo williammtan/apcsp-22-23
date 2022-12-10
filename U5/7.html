@@ -24,11 +24,18 @@
             font-size:50px;
             pointer-events: visible;
         }
+
+        img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
-    <span onclick="changeImg(1)" class="arrow" style="justify-content: start;"><</span>
-    <span onclick="changeImg(-1)" class="arrow" style="justify-content: end;">></span>
+    <button id="back" onclick="changeImg(-1)"><span class="arrow" style="justify-content: start;"><</span></button>
+    <img id="img"></div>
+    <button id="next" onclick="changeImg(1)"><span class="arrow" style="justify-content: end;">></span></button>
     
     <script>
         let idx = 0;
@@ -36,9 +43,25 @@
 
         window.onload = () => {changeImg(0)};
 
+        // function changeImg(by) {
+        //     idx = Math.max(Math.min(idx+by, images.length-1), 0)
+        //     document.getElementById('img').src = images[idx];
+        // }
+
         function changeImg(by) {
-            idx = Math.max(Math.max(idx, idx+by), 0)
-            document.body.style.backgroundImage = images[idx];
+            idx = Math.max(Math.min(idx+by, images.length-1), 0);
+            if(idx == 0) {
+                console.log("jd");
+                document.getElementById("back").disabled = true;
+                document.getElementById("next").disabled = false;
+            } else if(idx == images.length-1) {
+                document.getElementById("back").disabled = false;
+                document.getElementById("next").disabled = true;
+            } else {
+                document.getElementById("back").disabled = false;
+                document.getElementById("next").disabled = false;
+            }
+            document.getElementById('img').src = images[idx];
         }
     </script>
 </body>

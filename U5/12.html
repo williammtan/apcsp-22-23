@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dice Simulator</h1>
+    <table id="table" border="1"></table>
+    <button onclick="simulateDice()">ROLL DICE</button>
+    <img id="roll" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="200px"> 
+</body>
+<script>
+    let dice = [0,0,0,0,0,0];
+
+    function simulateDice() {
+        // roll dice
+
+        let roll = Math.floor(Math.random() * 6)+1;
+        dice[roll-1]++;
+        
+        // display in the screen
+        document.getElementById("roll").src = `diceimages/dice-${roll}.png`;
+
+        // update frequencies
+        outputFrequency();
+    }
+
+    function outputFrequency() {
+        // reset and display table
+        let table = document.getElementById("table");
+        table.innerHTML = "<tr><th>roll</th><th>no.</th>";
+        
+        for(let i=0;i<dice.length;i++) {
+            console.log(i);
+            let row = document.createElement("tr");
+            row.innerHTML = `<td>${i+1}</td><td>${dice[i]}</td>`;
+            table.appendChild(row);
+        }
+    }
+
+    window.onload = outputFrequency;
+</script>
+</html>

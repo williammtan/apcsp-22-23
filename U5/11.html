@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="generate()">generate</button>
+    <br>
+    <input id="in">
+    <button onclick="check()">Check if in list</button>
+    <p id="out"></p>
+    <script>
+        let arr;
+        let n=10;
+        function generate() {
+            arr = [];
+            for(let i=0;i<n;i++) {
+                arr.push(Math.floor(Math.random()*50)+1);
+            }
+            console.log(arr);
+            document.getElementById("out").innerHTML = "numbers generated";
+        }
+        function check() {
+            let c = parseInt(document.getElementById("in").value);
+            let i = -1;
+
+            for(let j=0;j<arr.length;j++) {
+                if(arr[j]==c) {
+                    i = j;
+                    break;
+                }
+            }
+
+            if(i==-1) {
+                alert(c + " not found in arr");
+            } else {
+                alert(c + " found in index " + i);
+            }
+        }
+    </script>
+</body>
+</html>

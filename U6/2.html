@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <input id="input">
+    <button onclick="addTask()">Add task</button>
+    <div id="tasks">
+
+    </div>
+    <button onclick="reset()">reset</button>
+    <script>
+        let tasks = [];
+
+        window.onload = () => {
+            let taskJ = JSON.parse(localStorage.getItem("tasks"));
+            if (taskJ) {
+                tasks = taskJ;
+            }
+            updateTasks();
+        };
+
+        function updateTasks() {
+            let out = "<ul>";
+            tasks.forEach(t => {
+                out += "<li>"+t+"</li>";
+            });
+            out += "</ul>";
+            document.getElementById("tasks").innerHTML = out;
+        }
+        
+        function addTask() {
+            tasks.push(document.getElementById('input').value);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            updateTasks();
+        }
+
+        function reset() {
+            tasks = [];
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            updateTasks();
+        }
+    </script>
+</body>
+</html>
